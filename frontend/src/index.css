@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: #171a18;
+    color: #f4f1e8;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(138, 166, 136, 0.35);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #353d35;
+    border: 3px solid #171a18;
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply border border-charcoal-700/70 bg-charcoal-900;
+  }
+
+  .subtle-label {
+    @apply text-[11px] font-medium uppercase tracking-[0.16em] text-parchment-400;
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-sage-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-950;
+  }
+}
+
+.textLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 1;
+  line-height: 1;
+  text-align: initial;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  z-index: 2;
+}
+
+.textLayer span,
+.textLayer br {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+
+.textLayer ::selection {
+  background: rgba(138, 166, 136, 0.45);
+}
+
+.pdf-page-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+}
